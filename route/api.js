@@ -167,7 +167,7 @@ try {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            creator: creator
+            creator: creator,
             status: 500, 
             message: 'Internal Server Error'
         });
@@ -189,7 +189,7 @@ try {
     }.catch (error) {
         console.log(error);
         res.status(500).json({
-            creator: creator
+            creator: creator,
             status: 500, 
             message: 'Internal Server Error'
         });
@@ -211,7 +211,7 @@ try {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            creator: creator
+            creator: creator,
             status: 500, 
             message: 'Internal Server Error'
         });
@@ -228,7 +228,7 @@ router.get('/random/penyegartimeline', async (req, res) => {
     }).catch(error => {
         console.log(error);
         res.status(500).json({
-            creator: creator
+            creator: creator,
             status: 500, 
             message: 'Internal Server Error'
         });
@@ -250,7 +250,7 @@ try {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            creator: creator
+            creator: creator,
             status: 500, 
             message: 'Internal Server Error'
         });
