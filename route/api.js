@@ -147,7 +147,8 @@ router.get('/youtube/ytmp4', async (req, res) => {
 
 //Random Text
 router.get('/random/quotes', async (req, res) => {
-    readFileJson('../lib/data/quotes.json').then(result => {
+try {
+    let result = await readFileJson('../lib/data/quotes.json')
     let hasil = await translate(result.quotes, { to: 'en' });
         res.status(200).json({
             creator: creator,
@@ -163,18 +164,19 @@ router.get('/random/quotes', async (req, res) => {
                 }
             }
         });
-    }).catch(error => {
+    } catch (error) {
         console.log(error);
         res.status(500).json({
             creator: creator
             status: 500, 
             message: 'Internal Server Error'
         });
-    });
+    };
 });
 
 router.get('/random/fakta', async (req, res) => {
-    readFileTxt('../lib/data/fakta.txt').then(result => {
+try {
+    let result = await readFileTxt('../lib/data/fakta.txt')
     let hasil = await translate(result, { to: 'en' });
         res.status(200).json({
             creator: creator,
@@ -184,18 +186,19 @@ router.get('/random/fakta', async (req, res) => {
                 english: hasil
             }
         });
-    }).catch(error => {
+    }.catch (error) {
         console.log(error);
         res.status(500).json({
             creator: creator
             status: 500, 
             message: 'Internal Server Error'
         });
-    });
+    };
 });
 
 router.get('/random/bijak', async (req, res) => {
-    readFileTxt('../lib/data/bijak.txt').then(result => {
+try {
+    let result = await readFileTxt('../lib/data/bijak.txt')
     let hasil = await translate(result, { to: 'en' });
         res.status(200).json({
             creator: creator,
@@ -205,14 +208,14 @@ router.get('/random/bijak', async (req, res) => {
                 english: hasil
             }
         });
-    }).catch(error => {
+    } catch (error) {
         console.log(error);
         res.status(500).json({
             creator: creator
             status: 500, 
             message: 'Internal Server Error'
         });
-    });
+    };
 });
 
 router.get('/random/penyegartimeline', async (req, res) => {
@@ -233,7 +236,8 @@ router.get('/random/penyegartimeline', async (req, res) => {
 });
 
 router.get('/random/motivasi', async (req, res) => {
-    readFileTxt('../lib/data/motivasi.txt').then(result => {
+try {
+    let result = await readFileTxt('../lib/data/motivasi.txt')
     let hasil = await translate(result.replace(/"/g, ''), { to: 'en' });
         res.status(200).json({
             creator: creator,
@@ -243,14 +247,14 @@ router.get('/random/motivasi', async (req, res) => {
                 english: hasil
             }
         });
-    }).catch(error => {
+    } catch (error) {
         console.log(error);
         res.status(500).json({
             creator: creator
             status: 500, 
             message: 'Internal Server Error'
         });
-    });
+    };
 });
 
 //Lahelu/Meme
