@@ -1,0 +1,394 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Api Documentation",
+    "description": "",
+    "termsOfService": "",
+    "contact": {
+      "email": "davidricardo041107@gmail.com"
+    },
+    "license": {
+      "name": "",
+      "url": ""
+    },
+    "version": "1.0.11"
+  },
+  "externalDocs": {
+    "description": "Support this project by donating",
+    "url": "https://saweria.co/xxivmmiii"
+  },
+  "tags": [
+    {
+      "name": "Downloaders",
+      "description": "API endpoints for downloading content from various platforms."
+    },
+    {
+      "name": "Tools",
+      "description": "API endpoints for Tools content from various platforms."
+    },
+    {
+      "name": "Random",
+      "description": "API endpoints for Random content from several sources."
+    },
+    {
+      "name": "Meme",
+      "description": "API endpoints for Random Meme content from several sources."
+    }
+  ],
+  "paths": {
+    "/api/instagram": {
+      "post": {
+        "summary": "Download Instagram content",
+        "tags": ["Downloaders"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "url",
+                    "example": "https://www.instagram.com/p/C2Tf_XuPCH8/",
+                    "description": "The URL of the Instagram post to be downloaded."
+                  },
+                  "cookie": {
+                    "type": "string",
+                    "format": "cookie",
+                    "example": "",
+                    "description": "Optional. The cookie string for authenticated access to Instagram."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Invalid URL"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/instagram/getcookie": {
+      "post": {
+        "summary": "Getcookie Instagram content",
+        "tags": ["Tools"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "format": "username",
+                    "example": "Akkunmu_1998",
+                    "description": ""
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password",
+                    "example": "xxxxxxx",
+                    "description": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Invalid URL"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/youtube/ytplay": {
+      "get": {
+        "summary": "Get Audio Youtube Content From Query",
+        "tags": ["Downloaders"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "format": "query",
+                    "example": "TheFatRat Monody",
+                    "description": "Search For Something, And Audio To Be Downloaded"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Invalid URL"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/youtube/ytmp3": {
+      "get": {
+        "summary": "Get Audio Youtube Content From URL",
+        "tags": ["Downloaders"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "url",
+                    "example": "https://youtu.be/B7xai5u_tnk?si=CEzFHn2HVpgWAjTw",
+                    "description": "Input YouTube URL, And Audio To Be Downloaded"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Invalid URL"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/youtube/ytmp4": {
+      "get": {
+        "summary": "Get Video Youtube Content From URL",
+        "tags": ["Downloaders"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "url",
+                    "example": "https://youtu.be/B7xai5u_tnk?si=CEzFHn2HVpgWAjTw",
+                    "description": "Input YouTube URL, And Video To Be Downloaded"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Invalid URL"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/random/quotes": {
+      "get": {
+        "summary": "GET Some Random Quotes",
+        "tags": ["Random"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+               "description": "Get Some Random Quotes"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/random/fakta": {
+      "get": {
+        "summary": "GET Some Random Fact",
+        "tags": ["Random"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+               "description": "Get Some Random Fact"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/random/bijak": {
+      "get": {
+        "summary": "GET Some Random Wise",
+        "tags": ["Random"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+               "description": "Get Some Random Wise"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/random/penyegartimeline": {
+      "get": {
+        "summary": "GET Some Random Time Line Refresher",
+        "tags": ["Random"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+               "description": "Get Some Random Time Line Refresher"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/random/motivasi": {
+      "get": {
+        "summary": "GET Some Random Motivation",
+        "tags": ["Random"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+               "description": "Get Some Random Motivation "
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/meme-lahelu/random": {
+      "get": {
+        "summary": "GET Some Random Meme Lahelu",
+        "tags": ["Meme"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+               "description": "Get Some Random Meme Lahelu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/meme-lahelu/search": {
+      "get": {
+        "summary": "Search Random Meme Lahelu",
+        "tags": ["Meme"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "query",
+                    "example": "Jomok",
+                    "description": "Enter a Query, and the results will be displayed"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found :/"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
