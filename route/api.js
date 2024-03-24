@@ -364,7 +364,7 @@ router.get('/lahelu-meme/search', async (req, res) => {
     res.status(500).json({
         creator: "David XD & Putu OFFC",
         status: 500,
-        message: "Internal Server Error
+        message: "Internal Server Error"
     });
   }
 });
