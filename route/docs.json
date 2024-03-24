@@ -243,7 +243,6 @@
             "description": "Internal Server Error"
           }
         }
-      }
     },
     "/api/random/fakta": {
       "get": {
@@ -265,7 +264,6 @@
             "description": "Internal Server Error"
           }
         }
-      }
     },
     "/api/random/bijak": {
       "get": {
@@ -287,7 +285,6 @@
             "description": "Internal Server Error"
           }
         }
-      }
     },
     "/api/random/penyegartimeline": {
       "get": {
@@ -309,7 +306,6 @@
             "description": "Internal Server Error"
           }
         }
-      }
     },
     "/api/random/motivasi": {
       "get": {
@@ -331,7 +327,6 @@
             "description": "Internal Server Error"
           }
         }
-      }
     },
     "/api/meme-lahelu/random": {
       "get": {
@@ -353,7 +348,6 @@
             "description": "Internal Server Error"
           }
         }
-      }
     },
     "/api/meme-lahelu/search": {
       "get": {
